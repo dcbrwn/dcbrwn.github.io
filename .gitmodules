@@ -1,0 +1,6 @@
+[submodule "matrix-games"]
+	path = matrix-games
+	url = https://github.com/dcbrwn/matrix-games.git
+[submodule "faith"]
+	path = faith
+	url = https://github.com/dcbrwn/faith.git

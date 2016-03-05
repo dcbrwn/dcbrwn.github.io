@@ -2,9 +2,46 @@
 <html>
   <head>
     <title>Public</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        background: #282828;
+      }
+
+      .links-container {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .links-container a {
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+        display: block;
+        box-sizing: border-box;
+        padding-top: 1em;
+        color: #282828;
+        background: #A1B56C;
+        width: 100%;
+        height: 3em;
+        margin-top: 3em;
+        font-family: monospace;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.1s linear;
+        border-radius: 2px;
+      }
+
+      .links-container a:hover {
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+        background: #B4C781;
+      }
+    </style>
   </head>
   <body>
-    <a href="/faith/dist/index.html">Faith</a>
-    <a href="/matrix-games/index.html">Matrix games</a>
+    <div class="links-container">
+      <a href="/faith/dist/index.html">Faith</a>
+      <a href="/matrix-games/index.html">Matrix games</a>
+    </div>
   </body>
 </html>

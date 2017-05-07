@@ -4,3 +4,6 @@
 [submodule "faith"]
 	path = faith
 	url = https://github.com/dcbrwn/faith.git
+[submodule "web-sequencer"]
+	path = web-sequencer
+	url = https://github.com/dcbrwn/web-sequencer.git

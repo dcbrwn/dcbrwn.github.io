@@ -9,4 +9,4 @@
 	url = https://github.com/dcbrwn/web-sequencer.git
 [submodule "2d-exercises"]
 	path = 2d-exercises
-	url = ssh://git@github.com/dcbrwn/2d-exercises.git
+	url = https://github.com/dcbrwn/2d-exercises.git

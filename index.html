@@ -4,7 +4,6 @@
     <title>Junkyard</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="/">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       .container {
@@ -12,12 +11,19 @@
         max-width: 540px;
         margin: 0 auto;
       }
+
+      #pingpong {
+        width: 100%;
+        max-width: 540px;
+        height: auto;
+      }
     </style>
   </head>
   <body>
     <article class="container">
       <header>
         <h1>Junkyard</h1>
+        <canvas id="pingpong" width="540px" height="270px"></canvas>
         <p>
           On this page you'll find some of my code that I've been messing around when I had spare time.
           All of this still requires <i>a lot</i> of polishing but it works and looks fine &#x1F61D;
@@ -34,9 +40,10 @@
       <footer>
         <hr>
         Handmade by <a href="https://github.com/dcbrwn">Danila Shutov</a>.<br>
-        You can contact me via <a href="https://www.linkedin.com/in/dcbrwn">LinkedIn profile</a>
+        You can contact me via <a href="https://www.linkedin.com/in/dcbrwn">LinkedIn</a>
         or email <a href="mailto:dcbrwn2@gmail.com">dcbrwn2@gmail.com</a>.
       </footer>
     </div>
+    <script src="./pingpong.js"></script>
   </body>
 </html>

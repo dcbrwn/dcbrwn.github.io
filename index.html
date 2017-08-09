@@ -10,9 +10,10 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
         max-width: 540px;
         margin: 0 auto;
+        image-rendering: pixelated;
       }
 
-      #pingpong {
+      #canvas {
         width: 100%;
         max-width: 540px;
         height: auto;
@@ -23,7 +24,7 @@
     <article class="container">
       <header>
         <h1>Junkyard</h1>
-        <canvas id="pingpong" width="540px" height="270px"></canvas>
+        <canvas id="canvas" width="540px" height="270px"></canvas>
         <p>
           On this page you'll find some of my code that I've been messing around when I had spare time.
         </p>
@@ -44,17 +45,26 @@
         or email <a href="mailto:dcbrwn2@gmail.com">dcbrwn2@gmail.com</a>.
       </footer>
     </article>
-    <script src="./pingpong.js"></script>
     <script>
       // Don't get me wrong, I'm just curious how many people are visiting junkyard.
-      // Not hesitate to use any anti-tracking techniques. I'm not going
-      // to mess with your data in any way ;)
+      // Not hesitate to use any anti-tracking techniques if you want.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-102926395-1', 'auto');
       ga('send', 'pageview');
+
+      window.onload = function() {
+        const doodles = [
+          '/life.js',
+          '/pong.js',
+        ];
+        const doodle = doodles[Math.random() * doodles.length | 0];
+        const script = document.createElement('script');
+        script.src = doodle;
+        document.body.appendChild(script);
+      }
     </script>
   </body>
 </html>

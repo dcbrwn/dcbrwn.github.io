@@ -1,11 +1,10 @@
-// Hackathon-style 15min ping-pong :P
 !function() {
   'use strict';
 
   const scheduleFrame = window.requestAnimationFrame || function(fn) {
     setTimeout(fn, 10);
   };
-  const canvas = document.getElementById('pingpong');
+  const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   const width = canvas.width;
   const height = canvas.height;

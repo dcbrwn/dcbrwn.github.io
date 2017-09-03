@@ -16,8 +16,8 @@
 
   function iterate(source, target) {
     function get(x, y) {
-      const rx = x % width >> 0;
-      const ry = y % height >> 0;
+      const rx = (x < 0 ? width + x : x) % width >> 0;
+      const ry = (y < 0 ? height + y : y) % height >> 0;
       const index = (width * ry + rx) << 2;
       return source[index] === 0 ? 1 : 0;
     }
@@ -45,8 +45,11 @@
       }
     }
 
-    for (let x = 0; x < width; x += 1) {
-      put(x, 0, Math.random() > 0.5 ? 1 : 0);
+    // Feed
+    for (let y = -5; y < 5; y += 1) {
+      for (let x = -5; x < 5; x += 1) {
+        put(x, y, Math.random() > 0.5 ? 0 : 1);
+      }
     }
   }
 

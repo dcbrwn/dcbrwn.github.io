@@ -1,73 +1,67 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Junkyard</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      .container {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        max-width: 540px;
-        margin: 0 auto;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: pixelated;
-        -ms-interpolation-mode: nearest-neighbor;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14px;
+      overflow: hidden;
+    }
 
-      #canvas {
-        width: 100%;
-        max-width: 540px;
-        height: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <article class="container">
-      <header>
-        <h1>Junkyard</h1>
-        <canvas id="canvas" width="540px" height="270px"></canvas>
-        <p>
-          On this page you'll find some of my code that I've been messing around when I had spare time.
-        </p>
-      </header>
-      <ul>
-        <li><a href="https://github.com/dcbrwn/artograph">Artograph</a></li>
-        <li><a href="https://github.com/photospice/photospice">Photospice</a></li>
-        <li><a href="https://2017.spaceappschallenge.org/challenges/ideate-and-create/1d-2d-3d-go/teams/hala-1/project">SpaceApps 2017 - HALA</a></li>
-        <li><a href="/matrix-games/index.html">Matrix games</a></li>
-        <li><a href="/web-sequencer/index.html">Simple WebAudio sequencer</a></li>
-        <li><a href="/2d-exercises/index.html">2d exercises</a></li>
-        <li><a href="https://www.shadertoy.com/view/lsjfzz">Meta-slime shader</a></li>
-        <li><a href="/faith/dist/index.html">A prototype of Faith</a></li>
-      </ul>
-      <footer>
-        <hr>
-        Handmade by <a href="https://github.com/dcbrwn">Danila Shutov</a>.<br>
-        You can contact me via <a href="https://www.linkedin.com/in/dcbrwn">LinkedIn</a>
-        or email <a href="mailto:dcbrwn2@gmail.com">dcbrwn2@gmail.com</a>.
-      </footer>
-    </article>
-    <script>
-      // Don't get me wrong, I'm just curious how many people are visiting junkyard.
-      // Not hesitate to use any anti-tracking techniques if you want.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-102926395-1', 'auto');
-      ga('send', 'pageview');
+    #canvas {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
 
-      window.onload = function() {
-        const doodles = [
-          '/life.js',
-          '/pong.js',
-        ];
-        const doodle = doodles[Math.random() * doodles.length | 0];
-        const script = document.createElement('script');
-        script.src = doodle;
-        document.body.appendChild(script);
-      }
-    </script>
-  </body>
+    #scroll-container {
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      height: 100vh;
+      width: calc(100vw + 100px);
+      overflow: auto;
+      padding: 100vh 0 0 0;
+      overscroll-behavior: none;
+    }
+
+    #content-container {
+      cursor: auto;
+      width: 100vw;
+      background-color: white;
+    }
+
+    #content {
+      padding: 18px;
+      box-sizing: border-box;
+      width: 100vw;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <canvas id="canvas"></canvas>
+  <div id="scroll-container">
+    <div id="content-container">
+      <section id="content"></section>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://rawgit.com/actarian/glsl-canvas/master/dist/glsl-canvas.min.js"></script>
+  <script type="text/javascript" src="sketches.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
 </html>

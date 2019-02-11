@@ -32,7 +32,7 @@ window.sketches = [
     title: 'Trippy wallpaper',
     note: `
       <p>
-        I was trying to remember how to implement one hacky but neat noise function, but accidentaly came up with this.
+        I was trying to remember how to implement one hacky but neat noise function, but accidentaly made this.
       </p>
     `,
   }

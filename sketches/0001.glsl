@@ -1,6 +1,6 @@
 // http://iquilezles.org/www/articles/distfunctions/distfunctions.htm
 
-precision mediump float;
+precision highp float;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;

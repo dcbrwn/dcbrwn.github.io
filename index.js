@@ -125,7 +125,7 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
                 ${sketches.map((sketch) => html`
                   <option
                     selected=${selectedSketch.createdAt === sketch.createdAt}
-                    value=${sketch.createdAt}>${sketch.title}</option>
+                    value=${sketch.createdAt}>${new Date(sketch.createdAt).toLocaleDateString()}: ${sketch.title}</option>
                 `)}
               </select>
               ${context.content}

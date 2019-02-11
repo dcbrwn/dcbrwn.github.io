@@ -4,63 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <style>
-    html, body {
-      padding: 0;
-      margin: 0;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 14px;
-      overflow: hidden;
-    }
-
-    #canvas {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: pixelated;
-      -ms-interpolation-mode: nearest-neighbor;
-    }
-
-    #scroll-container {
-      cursor: pointer;
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      height: 100vh;
-      width: calc(100vw + 100px);
-      overflow: auto;
-      padding: 100vh 0 0 0;
-    }
-
-    #content-container {
-      cursor: auto;
-      width: 100vw;
-      background-color: white;
-    }
-
-    #content {
-      padding: 18px;
-      box-sizing: border-box;
-      width: 100vw;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-  </style>
-
-  <canvas id="canvas"></canvas>
-  <div id="scroll-container">
-    <div id="content-container">
-      <section id="content"></section>
-    </div>
-  </div>
   <script type="text/javascript" src="https://rawgit.com/actarian/glsl-canvas/master/dist/glsl-canvas.min.js"></script>
   <script type="text/javascript" src="sketches.js"></script>
-  <script type="text/javascript" src="index.js"></script>
+  <script type="module" type="text/javascript" src="index.js"></script>
 </body>
 </html>

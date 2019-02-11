@@ -163,14 +163,14 @@ vec4 azure (float t) {
   vec3 top = vec3(0.11, 0.34, 0.6);
   vec3 mid = vec3(0.16, 0.53, 0.84);
   vec3 bottom = vec3(0.49, 0.72, 0.9);
-  return vec4(mix(bottom, mix(mid, top, t), t + 1.0), 1.0);
+  return vec4(mix(bottom, mix(mid, top, t - 0.3), t + 0.3), 1.0);
 }
 
 vec4 lava (float t) {
-  vec3 top = vec3(0.8039, 0.5098, 0.0667);
-  vec3 mid = vec3(0.8392, 0.1451, 0.0235);
-  vec3 bottom = vec3(0.0863, 0.0118, 0.0039);
-  return vec4(mix(bottom, mix(mid, top, t), t + 1.0), 1.0);
+  vec3 top = vec3(1.0, 0.9529, 0.3216);
+  vec3 mid = vec3(0.8118, 0.1216, 0.0);
+  vec3 bottom = vec3(0.1137, 0.0196, 0.0078);
+  return vec4(mix(bottom, mix(mid, top, t - 0.3), t + 0.3), 1.0);
 }
 
 void main() {

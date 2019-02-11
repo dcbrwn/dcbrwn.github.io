@@ -1,6 +1,6 @@
 window.sketches = [
   {
-    createdAt: '2019-02-09T21:36:02.010Z',
+    createdAt: '2019-02-09',
     frag: '/sketches/0001.glsl',
     title: 'Ray-marching scene',
     note: `
@@ -20,7 +20,7 @@ window.sketches = [
     `,
   },
   {
-    createdAt: '2019-02-10T21:52:53.650Z',
+    createdAt: '2019-02-10',
     frag: '/sketches/0002.glsl',
     title: 'Cellular noise',
     note: `
@@ -28,6 +28,19 @@ window.sketches = [
         <h1>Cellular noise</h3>
         <p>
           A nice, organic noise function. Fun to play with. Just by picking different colors one can get interesting results.
+        </p>
+      </article>
+    `,
+  },
+  {
+    createdAt: '2019-02-10',
+    frag: 'sketches/0003.glsl',
+    title: 'Trippy wallpaper',
+    note: `
+      <article>
+        <h1>Trippy wallpaper</h3>
+        <p>
+          <code>(1.0 + cos(p.x * p.y + u_time * 10.0 + p.x * p.x)) / 2.0;</code>
         </p>
       </article>
     `,

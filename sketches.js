@@ -32,7 +32,7 @@ window.sketches = [
     title: 'Trippy wallpaper',
     note: `
       <p>
-        <code>(1.0 + cos(p.x * p.y + u_time * 10.0 + p.x * p.x)) / 2.0;</code>
+        I was trying to remember how to implement one hacky but neat noise function, but accidentaly came up with this.
       </p>
     `,
   }

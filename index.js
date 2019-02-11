@@ -77,25 +77,23 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
           height: 100vh;
           width: calc(100vw + 100px);
           overflow: auto;
-          padding: 100vh 0 0 0;
-        }
-
-        #content-container {
-          cursor: auto;
-          width: 100vw;
-          background-color: white;
+          padding: calc(100vh - 54px) 0 0 0;
         }
 
         #content {
+          cursor: auto;
           padding: 18px;
           box-sizing: border-box;
           width: 100vw;
           max-width: 560px;
           margin: 0 auto;
+          background-color: white;
         }
 
         #sketch-selector {
+          cursor: pointer;
           margin-left: -4px;
+          width: 100%;
           border: 0;
           padding: 0;
           font-family: 'Times New Roman', Times, serif;
@@ -113,25 +111,29 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
           clear: both;
           float: right;
         }
+
+        .resource-link {
+          color: dimgray;
+        }
       </style>
 
       <canvas id="canvas"></canvas>
 
       <div id="scroll-container" onclick=${handleScrollContainerClick}>
-        <div id="content-container">
-          <section id="content">
-            <article>
-              <select id="sketch-selector" onchange=${handleSketchChange}>
-                ${sketches.map((sketch) => html`
-                  <option
-                    selected=${selectedSketch.createdAt === sketch.createdAt}
-                    value=${sketch.createdAt}>${new Date(sketch.createdAt).toLocaleDateString()}: ${sketch.title}</option>
-                `)}
-              </select>
-              ${context.content}
-            </article>
-          </section>
-        </div>
+        <section id="content">
+          <article>
+            <select id="sketch-selector" onchange=${handleSketchChange}>
+              ${sketches.map((sketch) => html`
+                <option
+                  selected=${selectedSketch.createdAt === sketch.createdAt}
+                  value=${sketch.createdAt}>${new Date(sketch.createdAt).toLocaleDateString()}: ${sketch.title}</option>
+              `)}
+            </select>
+            ${context.content}
+
+            <i><a class="resource-link" target="_blank" href=${selectedSketch.frag}>fragment shader</a></i>
+          </article>
+        </section>
       </div>
     `);
   }

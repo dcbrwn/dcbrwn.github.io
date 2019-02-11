@@ -13,6 +13,10 @@ vec4 gradient (float t) {
   return vec4(mix(bottom, mix(mid, top, t - 0.3), t + 0.3), 1.0);
 }
 
+vec2 align (vec2 value, float step) {
+  return value - mod(value, vec2(step));
+}
+
 void main () {
-  gl_FragColor = gradient(p_random(gl_FragCoord.xy / 2.0));
+  gl_FragColor = gradient(p_random(align(gl_FragCoord.xy, 5.0)));
 }

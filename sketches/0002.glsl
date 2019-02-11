@@ -1,7 +1,4 @@
-#ifdef GL_ES
-    precision mediump float;
-#endif
-
+precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
@@ -153,7 +150,6 @@ vec2 cellular(vec3 P) {
 	vec3 d33 = dx33 * dx33 + dy33 * dy33 + dz33 * dz33;
 
 	// Sort out the two smallest distances (F1, F2)
-#if 0
 	// Cheat and sort out only F1
 	vec3 d1 = min(min(d11,d12), d13);
 	vec3 d2 = min(min(d21,d22), d23);
@@ -161,38 +157,6 @@ vec2 cellular(vec3 P) {
 	vec3 d = min(min(d1,d2), d3);
 	d.x = min(min(d.x,d.y),d.z);
 	return vec2(sqrt(d.x)); // F1 duplicated, no F2 computed
-#else
-	// Do it right and sort out both F1 and F2
-	vec3 d1a = min(d11, d12);
-	d12 = max(d11, d12);
-	d11 = min(d1a, d13); // Smallest now not in d12 or d13
-	d13 = max(d1a, d13);
-	d12 = min(d12, d13); // 2nd smallest now not in d13
-	vec3 d2a = min(d21, d22);
-	d22 = max(d21, d22);
-	d21 = min(d2a, d23); // Smallest now not in d22 or d23
-	d23 = max(d2a, d23);
-	d22 = min(d22, d23); // 2nd smallest now not in d23
-	vec3 d3a = min(d31, d32);
-	d32 = max(d31, d32);
-	d31 = min(d3a, d33); // Smallest now not in d32 or d33
-	d33 = max(d3a, d33);
-	d32 = min(d32, d33); // 2nd smallest now not in d33
-	vec3 da = min(d11, d21);
-	d21 = max(d11, d21);
-	d11 = min(da, d31); // Smallest now in d11
-	d31 = max(da, d31); // 2nd smallest now not in d31
-	d11.xy = (d11.x < d11.y) ? d11.xy : d11.yx;
-	d11.xz = (d11.x < d11.z) ? d11.xz : d11.zx; // d11.x now smallest
-	d12 = min(d12, d21); // 2nd smallest now not in d21
-	d12 = min(d12, d22); // nor in d22
-	d12 = min(d12, d31); // nor in d31
-	d12 = min(d12, d32); // nor in d32
-	d11.yz = min(d11.yz,d12.xy); // nor in d12.yz
-	d11.y = min(d11.y,d12.z); // Only two more to go
-	d11.y = min(d11.y,d11.z); // Done! (Phew!)
-	return sqrt(d11.xy); // F1, F2
-#endif
 }
 
 vec4 azure (float t) {

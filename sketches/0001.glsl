@@ -1,8 +1,6 @@
 // http://iquilezles.org/www/articles/distfunctions/distfunctions.htm
 
-#ifdef GL_ES
-    precision mediump float;
-#endif
+precision mediump float;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;

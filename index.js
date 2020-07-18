@@ -21,7 +21,6 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
 
       glsl.load(sketch._frag);
       glsl.play();
-      requestAnimationFrame(() => glsl.pause());
 
       context.title = sketch.title;
       context.createdAt = sketch.createdAt;
@@ -35,7 +34,11 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
 
   function handleScrollContainerClick (event) {
     if (event.target === event.currentTarget) {
-      glsl.toggle();
+      if (glsl.paused) {
+        glsl.play();
+      } else {
+        glsl.pause();
+      }
     }
   }
 
@@ -152,6 +155,8 @@ import { render, html } from 'https://unpkg.com/lighterhtml@0.9.0?module';
     updateDom();
 
     canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     glsl = new GlslCanvas(canvas);
     glsl.on('error', (event) => {
       console.warn('GLSL-canvas error:', event);

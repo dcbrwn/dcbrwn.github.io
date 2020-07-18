@@ -5,9 +5,9 @@ window.sketches = [
     title: 'Ray-marching scene',
     note: `
       <p>
-        Ray-marching is an interesting rendering technique, I found out a few years ago in articles of
+        Ray-marching is an interesting rendering technique, I found out a few years ago in articles by
         <a target="_blank" href="http://iquilezles.org/www/articles/raymarchingdf/raymarchingdf.htm">Inigo Quilez</a>.
-        With modern hardware, it allows amateurs like me, to experience a joy of creating phororealistic real-time procedural art,
+        With modern hardware, it allows to experience a joy of creating phororealistic real-time procedural art,
         only requiring some basic linear algebra knowledge.
       </p>
       <p>

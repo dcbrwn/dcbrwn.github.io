@@ -10,3 +10,6 @@
 [submodule "2d-exercises"]
 	path = 2d-exercises
 	url = https://github.com/dcbrwn/2d-exercises.git
+[submodule "ogl-tutorials"]
+	path = ogl-tutorials
+	url = git@github.com:dcbrwn/ogl-tutorials.git

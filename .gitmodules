@@ -12,4 +12,4 @@
 	url = https://github.com/dcbrwn/2d-exercises.git
 [submodule "ogl-tutorials"]
 	path = ogl-tutorials
-	url = git@github.com:dcbrwn/ogl-tutorials.git
+	url = https://github.com/dcbrwn/ogl-tutorials.git

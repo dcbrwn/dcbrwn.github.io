@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom selectors</title>
+    <style>
+        div {
+            font-family: sans-serif;
+            font-size: 28px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 4px;
+            margin: 16px;
+            background: beige;
+        }
+    </style>
+</head>
+<body>
+    <div data-test-id="is-a">A</div>
+    <div data-test-id="is-b">B</div>
+    <div data-test-id="is-c">C</div>
+
+    <script>
+        window.thCollectSelector = function(element) {
+            return element.dataset.testId;
+        };
+
+        window.thQuerySelector = function(selector) {
+            return document.querySelector(`[data-test-id="${selector}"]`);
+        }
+    </script>
+</body>
+</html>

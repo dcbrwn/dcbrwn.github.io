@@ -31,6 +31,10 @@
         window.thQuerySelector = function(selector) {
             return document.querySelector(`[data-test-id="${selector}"]`);
         }
+
+        window.thQuerySelectorAll = function(selector) {
+            return document.querySelectorAll(`[data-test-id="${selector}"]`);
+        }
     </script>
 </body>
 </html>

@@ -33,7 +33,7 @@
         }
 
         window.thQuerySelectorAll = function(selector) {
-            return document.querySelectorAll(`[data-test-id="${selector}"]`);
+            return [...document.querySelectorAll(`[data-test-id="${selector}"]`)];
         }
     </script>
 </body>
